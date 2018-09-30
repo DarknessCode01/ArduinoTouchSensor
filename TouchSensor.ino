@@ -24,7 +24,6 @@
  modified 7 Nov 2016
  by Arturo Guadalupi
 
- This example code is in the public domain.
 
  http://www.arduino.cc/en/Tutorial/LiquidCrystalHelloWorld
 
@@ -39,7 +38,8 @@ const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2, touchSensor=7;
 int touchy=0;
 int etattouchy=0;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-// Leds
+// LEDs Déclaration
+
 // Led Greed
 const int lG = 6;
 // led RED
@@ -63,8 +63,7 @@ void setup() {
 void loop()
 {
 touchy = digitalRead(touchSensor); // This var is =1 when you press the touchSensor
-if (touchy == 1 && etattouchy ==0)
-                   {
+if (touchy == 1 && etattouchy ==0) {
                   lcd.clear();
                   lcd.setCursor(0,0); // Sets the cursor to col 0 and row 0
                   lcd.print("touchy active "); // Prints Sensor Val: to LCD
@@ -78,8 +77,9 @@ if (touchy == 1 && etattouchy ==0)
                         lcd.print("touchy alone "); // Prints Sensor Val: to LCD
                         etattouchy=0;
                         delay(1000);
-                        }
- if (etattouchy==1){   digitalWrite(lY, HIGH); //Turn on lY    
+                       }
+ if (etattouchy==1){                                        // This Part is for turns LEDs to blink mode
+                  digitalWrite(lY, HIGH); //Turn on lY    
                   delay(1000);
                   digitalWrite(lY, LOW); //Turn off lY 
                   digitalWrite(lR, HIGH); //Turn on lR  
