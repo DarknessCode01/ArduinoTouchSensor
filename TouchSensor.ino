@@ -38,18 +38,18 @@ const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2, touchSensor=7;
 int touchy=0;
 int etattouchy=0;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-// LEDs Déclaration
+// LEDs Declaration
 
-// Led Greed
+// Led GREEN
 const int lG = 6;
 // led RED
 const int lR = 8;
-//led Yzllow
+//led YELLOW
 const int lY = 9;
 
 void setup() {
   // set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
+  lcd.begin(16, 2);&
   // Print a message to the LCD.
   lcd.print("hello, world!");
   pinMode(touchSensor,INPUT);
@@ -71,8 +71,8 @@ if (touchy == 1 && etattouchy ==0) {
                   etattouchy =1;
                   delay(1000);
                   }
-                  else if (touchy == 1 && etattouchy ==1) 
-                        {lcd.clear();
+                  else if (touchy == 1 && etattouchy ==1) {
+                       lcd.clear();
                         lcd.setCursor(0,0); // Sets the cursor to col 0 and row 0
                         lcd.print("touchy alone "); // Prints Sensor Val: to LCD
                         etattouchy=0;
